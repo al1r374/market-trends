@@ -1,0 +1,9 @@
+{
+	# LaunchDaemon has no usable resolver for "localhost"
+	admin off
+}
+
+# Reverse-proxy http://markets.local/ → local Streamlit
+http://markets.local {
+	reverse_proxy 127.0.0.1:8501
+}

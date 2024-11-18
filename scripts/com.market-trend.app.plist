@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.market-trend.app</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/alirezadp10/Projects/market-trend/scripts/start_streamlit.sh</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/alirezadp10/Projects/market-trend</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>StandardOutPath</key>
+	<string>/Users/alirezadp10/Projects/market-trend/logs/streamlit.out.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/alirezadp10/Projects/market-trend/logs/streamlit.err.log</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/Users/alirezadp10/Projects/market-trend/.venv/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,292 @@
+paths:
+  db: market_data.db
+  events: events.csv
+  presets: filter_presets.json
+
+date_range:
+  start_jalali: "1395/01/01"
+  end_jalali: "1410/01/01"
+
+chart:
+  height: 600
+  template: plotly_white
+
+markets:
+  - id: Sandoghe-Aiar
+    fa_name: عیار-مفید
+    color: "#1a1a1a"
+    category: fund
+    enabled: true
+    source: tsetmc
+    url: https://cdn.tsetmc.com/api/ClosingPrice/GetClosingPriceDailyList/34144395039913458/0
+
+  - id: Zar
+    fa_name: زر-طلا
+    color: "#B8860B"
+    category: fund
+    enabled: true
+    source: tsetmc
+    url: https://cdn.tsetmc.com/api/ClosingPrice/GetClosingPriceDailyList/33254899395816171/0
+
+  - id: Bourse
+    fa_name: بورس
+    color: "#32CD32"
+    category: equity
+    enabled: true
+    source: tgju_index
+    url: https://api.tgju.org/v1/stocks/instrument/history-data/%D8%B4-%DA%A9%D9%84-%D8%A8%D9%88%D8%B1%D8%B3?order_dir=asc&market=index
+
+  - id: Fara-Bourse
+    fa_name: فرابورس
+    color: "#FA8072"
+    category: equity
+    enabled: true
+    source: tgju_index
+    url: https://api.tgju.org/v1/stocks/instrument/history-data/%D8%B4-%DA%A9%D9%84-%D9%81%D8%B1%D8%A7%D8%A8%D9%88%D8%B1%D8%B3?order_dir=asc&market=index
+
+  - id: Bourse-Khodro
+    fa_name: بورس خودرو
+    color: "#808080"
+    category: equity
+    enabled: true
+    source: tgju_index
+    url: https://api.tgju.org/v1/stocks/instrument/history-data/%D8%B4-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%D8%B3%D8%A7%D8%B2%DB%8C?order_dir=asc&market=index
+
+  - id: Khesapa
+    fa_name: خساپا
+    color: "#DC143C"
+    category: equity
+    enabled: true
+    source: tgju_stock
+    url: https://api.tgju.org/v1/stocks/instrument/history-data/%D8%AE%D8%B3%D8%A7%D9%BE%D8%A7?order_dir=asc&market=stock&lang=fa
+
+  - id: Khodro
+    fa_name: خودرو
+    color: "#FF69B4"
+    category: equity
+    enabled: true
+    source: tgju_stock
+    url: https://api.tgju.org/v1/stocks/instrument/history-data/%D8%AE%D9%88%D8%AF%D8%B1%D9%88?order_dir=asc&market=stock&lang=fa
+
+  - id: Gold
+    fa_name: طلای ۱۸ عیار
+    color: "#FFD700"
+    category: gold
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/geram18?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Dollar
+    fa_name: دلار
+    color: "#228B22"
+    category: fx
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/price_dollar_rl?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: USDT
+    fa_name: تتر
+    color: "#26A17B"
+    category: fx
+    enabled: true
+    currency: irr
+    source: tgju_indicator
+    # TGJU IRR price of USDT (not crypto-tether USD peg ≈ 1).
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/crypto-tether-irr?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Coin
+    fa_name: سکه امامی
+    color: "#1E90FF"
+    category: gold
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/sekee?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Nim-Coin
+    fa_name: نیم سکه
+    color: "#9370DB"
+    category: gold
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/nim?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Coin-Gerami
+    fa_name: سکه گرمی
+    color: "#FFC0CB"
+    category: gold
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/gerami?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Rob-Coin
+    fa_name: ربع سکه
+    color: "#00CED1"
+    category: gold
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/rob?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Brent
+    fa_name: نفت برنت
+    color: "#36454F"
+    category: commodity
+    enabled: true
+    currency: usd
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/energy-brent-oil?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: USOON
+    fa_name: توکن نفت
+    color: "#1B4F72"
+    category: crypto
+    enabled: true
+    currency: usd
+    source: coinlore_hdata
+    # CoinLore returns empty body unless s/e query params are present.
+    url: https://ajax.coinlore.com/ajax/hdatav2/?coin=183195&s=undefined&e=undefined
+
+  - id: COPXON
+    fa_name: مس
+    color: "#B87333"
+    category: crypto
+    enabled: true
+    currency: irr
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/copxon?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Bitcoin
+    fa_name: بیت کوین
+    color: "#8A2BE2"
+    category: crypto
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/crypto-bitcoin?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Shiba
+    fa_name: شیبا
+    color: "#FF4500"
+    category: crypto
+    enabled: true
+    # TGJU truncates SHIB to 4 decimals (almost all zeros); use Binance daily closes.
+    source: binance_klines
+    url: https://api.binance.com/api/v3/klines?symbol=SHIBUSDT&interval=1d
+
+  - id: Doge
+    fa_name: دوج
+    color: "#4169E1"
+    category: crypto
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/crypto-dogecoin?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Link
+    fa_name: لینک
+    color: "#2E8B57"
+    category: crypto
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/crypto-chainlink?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: ETH
+    fa_name: اتریوم
+    color: "#FF8C00"
+    category: crypto
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/crypto-ethereum?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: ripple
+    fa_name: ریپل
+    color: "#DAA520"
+    category: crypto
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/crypto-ripple?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: PAXG
+    fa_name: پکس گلد
+    color: "#C9A227"
+    category: crypto
+    enabled: true
+    source: tgju_indicator
+    url: https://api.tgju.org/v1/market/indicator/summary-table-data/crypto-pax-gold?lang=fa&order_dir=asc&convert_to_ad=1
+
+  - id: Salam
+    fa_name: صندوق سلام
+    color: "#8B4513"
+    category: fund
+    enabled: true
+    source: tsetmc
+    url: https://cdn.tsetmc.com/api/ClosingPrice/GetClosingPriceDailyList/70541934393301867/0
+
+  - id: Energy
+    fa_name: انرژی
+    color: "#008080"
+    category: fund
+    enabled: true
+    source: tsetmc
+    url: https://cdn.tsetmc.com/api/ClosingPrice/GetClosingPriceDailyList/49641108336531623/0
+
+  - id: Synergy
+    fa_name: سینرژی
+    color: "#2F4F4F"
+    category: fund
+    enabled: true
+    source: tsetmc
+    url: https://cdn.tsetmc.com/api/ClosingPrice/GetClosingPriceDailyList/15001802434062073/0
+
+  # Abantether boxes. interval=yearly = daily closes (~1y);
+  # interval=daily on this API is intraday, not daily history.
+  - id: HomeBox
+    fa_name: هوم‌باکس
+    color: "#8B6914"
+    category: fund
+    enabled: true
+    currency: irr
+    source: abantether_line_chart
+    url: https://api.abantether.ir/api/v1/asset_management/line_chart?symbol=AST_HMBOX&interval=yearly
+
+  - id: ProBox
+    fa_name: پروباکس
+    color: "#4A6FA5"
+    category: fund
+    enabled: true
+    currency: irr
+    source: abantether_line_chart
+    url: https://api.abantether.ir/api/v1/asset_management/line_chart?symbol=AST_PROBOX&interval=yearly
+
+  - id: SilverBox
+    fa_name: سیلورباکس
+    color: "#5C6B7A"
+    category: fund
+    enabled: true
+    currency: irr
+    source: abantether_line_chart
+    url: https://api.abantether.ir/api/v1/asset_management/line_chart?symbol=AST_SLVBOX&interval=yearly
+
+  - id: CryptoBox
+    fa_name: کریپتوباکس
+    color: "#6C3483"
+    category: fund
+    enabled: true
+    currency: irr
+    source: abantether_line_chart
+    url: https://api.abantether.ir/api/v1/asset_management/line_chart?symbol=AST_CRYBOX&interval=yearly
+
+  - id: BourseBox
+    fa_name: بورس‌باکس
+    color: "#1B8A5A"
+    category: fund
+    enabled: true
+    currency: irr
+    source: abantether_line_chart
+    url: https://api.abantether.ir/api/v1/asset_management/line_chart?symbol=AST_BRSBOX&interval=yearly
+
+  - id: GoldBox
+    fa_name: گلدباکس
+    color: "#D4A017"
+    category: fund
+    enabled: true
+    currency: irr
+    source: abantether_line_chart
+    url: https://api.abantether.ir/api/v1/asset_management/line_chart?symbol=AST_XAUBOX&interval=yearly

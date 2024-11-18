@@ -1,0 +1,10 @@
+[server]
+enableStaticServing = true
+address = "127.0.0.1"
+port = 8501
+headless = true
+
+[browser]
+serverAddress = "markets.local"
+serverPort = 80
+gatherUsageStats = false

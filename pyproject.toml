@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "market-trend"
+version = "0.1.0"
+description = "Iranian market trend analysis and Streamlit dashboard"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.0",
+  "plotly>=5.18",
+  "streamlit>=1.28",
+  "persiantools>=4.0",
+  "requests>=2.31",
+  "PyYAML>=6.0",
+]
+
+[project.scripts]
+market-trend-update = "market_trend.etl.update:main"
+
+[tool.setuptools.packages.find]
+include = ["market_trend*"]
+
+[tool.setuptools.package-data]
+market_trend = ["components/vendor/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
