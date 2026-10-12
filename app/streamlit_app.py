@@ -893,6 +893,7 @@ def main() -> None:
                 "Synergy",
                 "Bitcoin",
                 "COPXON",
+                "Dollar",
             )
             if m in label_by_id
         ]
